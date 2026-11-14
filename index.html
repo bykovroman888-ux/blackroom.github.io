@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACKROOM</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Иконки Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Шрифт Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- ШАПКА САЙТА -->
+        <header class="header">
+            <!-- Верхняя полоса -->
+            <div class="header-top bg-light py-1 border-bottom">
+                <div class="container d-flex justify-content-between align-items-center flex-wrap">
+                    <div class="header-top-contacts text-muted small">
+                        <span class="me-3"><i class="bi bi-telephone text-dark me-1"></i> +7 (800) 000-00-00</span>
+                        <span><i class="bi bi-clock me-1"></i> Пн-Пт: 9:00 - 18:00</span>
+                    </div>
+                    <div class="header-top-user text-muted small">
+    <button type="button"
+            class="btn btn-link text-secondary text-decoration-none p-0 me-3"
+            data-bs-toggle="modal" data-bs-target="#loginModal">
+        <i class="bi bi-person me-1"></i>Войти
+    </button>
+
+    <button type="button"
+            class="btn btn-link text-secondary text-decoration-none p-0"
+            data-bs-toggle="modal" data-bs-target="#registerModal">
+        <i class="bi bi-person-add me-1"></i>Регистрация
+    </button>
+</div>
+                </div>
+            </div>
+
+            <!-- Средняя полоса -->
+            <div class="header-middle py-3 bg-white border-bottom">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-6 col-md-3">
+                            <a href="index.html" class="navbar-brand fw-bold fs-4 text-dark">
+                                <i class="bi bi-bag-heart-fill me-2"></i>BLACKROOM
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-6 order-3 order-md-2 mt-3 mt-md-0">
+                            <form class="d-flex" action="catalog.html" method="get">
+    <input class="form-control me-2"
+           type="search"
+           name="search"
+           placeholder="Поиск услуг..."
+           aria-label="Поиск услуг">
+    <button class="btn btn-dark" type="submit" aria-label="Искать">
+        <i class="bi bi-search"></i>
+    </button>
+</form>
+
+                        </div>
+                        <div class="col-6 col-md-3 text-end order-2 order-md-3">
+                            <a href="#" class="btn btn-outline-secondary position-relative me-2" title="Избранное">
+                                <i class="bi bi-heart"></i>
+                                <span id="favoriteCount"
+      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                            </a>
+                            <a href="#" class="btn btn-dark position-relative" title="Корзина" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
+                                <i class="bi bi-cart3"></i>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">0</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Навигация -->
+            <div class="header-bottom bg-dark text-white">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-dark py-0">
+                        <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                            <span class="navbar-toggler-icon"></span> Каталог
+                        </button>
+                        <div class="collapse navbar-collapse" id="mainMenu">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
+    <li class="nav-item dropdown">
+        <a class="nav-link" href="catalog.html">Каталог</a>
+    </li>
+    <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+    <li class="nav-item"><a class="nav-link" href="contact.html">Контакты</a></li>
+</ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main class="main-content py-4">
+            <div class="container">
+
+                <!-- 1. СЛАЙДЕР АКЦИЙ -->
+                <section class="hero-slider mb-5">
+                    <div id="homeCarousel" class="carousel slide shadow-sm rounded-3 overflow-hidden" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"></button>
+                        </div>
+                        <div class="carousel-inner" style="max-height: 330px;">
+                            <div class="carousel-item active bg-dark text-white p-4 p-md-5" style="height: 330px;">
+                                <div class="row align-items-center py-3">
+                                    <div class="col-md-8 ps-md-4">
+                                        <span class="badge text-bg-secondary mb-2 fs-6">Стиль. Качество. Забота.</span>
+                                        <h1 class="display-5 fw-bold mb-3">Барбершоп</h1>
+                                        <p class="lead mb-4">Современные стрижки, уход за собой.</p>
+                                        <button type="button" class="btn btn-light promo-btn"
+        data-promo-title="Запись онлайн"
+        data-promo-text="Запишись на стрижку через наш сайт или по телефону +7 (800) 000-00-00. Выбери удобное время и мастера — подтверждение придёт в SMS.">
+    <b>Записаться онлайн</b>
+</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item bg-dark text-white p-4 p-md-5" style="height: 330px;">
+                                <div class="row align-items-center py-3">
+                                    <div class="col-md-8 ps-md-4">
+                                        <span class="badge text-bg-success mb-2 fs-6">Сезонная Акция</span>
+                                        <h1 class="display-5 fw-bold mb-3">5 стрижка БЕСПЛАТНО</h1>
+                                        <p class="lead mb-4">Обнови свой стиль вместе с нами!</p>
+                                        <button type="button" class="btn btn-light promo-btn"
+        data-promo-title="Акция: 5-я стрижка бесплатно"
+        data-promo-text="Копи отметки: каждая пятая стрижка — в подарок. Отметки действуют 12 месяцев с момента первой стрижки. Спроси о карте лояльности у администратора при визите.">
+    <b>Узнать больше</b>
+</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item bg-dark text-white p-4 p-md-5" style="height: 330px;">
+                                <div class="row align-items-center py-3">
+                                    <div class="col-md-8 ps-md-4">
+                                        <span class="badge bg-danger mb-2 fs-6">Скидка</span>
+                                        <h1 class="display-5 fw-bold mb-3">Скидка -20%</h1>
+                                        <p class="lead mb-4">Постоянным клиентам, чай и кофе бесплатно!</p>
+                                        <button type="button" class="btn btn-light promo-btn"
+        data-promo-title="Скидка −20% постоянным клиентам"
+        data-promo-text="Приходи повторно в течение месяца после визита — получи скидку 20% на любую услугу. Чай и кофе — бесплатно в любое время. Скидка не суммируется с другими акциями.">
+    <b>Узнать больше</b>
+</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev" style="padding-right: 120px;">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next" style="padding-left: 120px;">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- 2. БЛОК ПРЕИМУЩЕСТВ -->
+                <section class="features mb-5">
+                    <div class="row g-3 text-center">
+                        <div class="col-6 col-md-3">
+                            <div class="p-3 bg-dark rounded-3 shadow-sm border h-100">
+                                <i class="bi bi-patch-check fs-1 text-light mb-2"></i>
+                                <h6 class="fw-bold mb-3 text-light mb-2">Профессиональные мастера</h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="p-3 bg-dark rounded-3 shadow-sm border h-100">
+                                <i class="bi bi-clock fs-1 text-light mb-2"></i>
+                                <h6 class="fw-bold mb-3 text-light mb-2">Удобная запись онлайн</h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="p-3 bg-dark rounded-3 shadow-sm border h-100">
+                                <i class="bi bi-gem fs-1 text-light mb-2"></i>
+                                <h6 class="fw-bold mb-3 text-light mb-2">Премиум качество сервиса</h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="p-3 bg-dark rounded-3 shadow-sm border h-100">
+                                <i class="bi bi-geo-alt fs-1 text-light mb-2"></i>
+                                <h6 class="fw-bold mb-3 text-light mb-2">Удобное расположение</h6>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. КАТАЛОГ ТОВАРОВ -->
+                <section class="products mb-5">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3 class="fw-bold mb-0">Наши мастера</h3>
+                        
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Карточка 1 -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card h-100 product-card shadow-sm border-0 position-relative">
+                                <div class="product-img-wrapper p-3 text-center bg-light">
+                                    <img src="C:\Users\student\Desktop\123\images\b7b56728-6333-43f2-b9b2-01955a0fc139.jpg" class="card-img-top img-fluid rounded" alt="" style="max-height: 400px; object-fit: contain;">
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <small class="text-muted mb-1"></small>
+                                    <h6 class="card-title fw-bold">
+                                        <a href="#" class="text-dark text-decoration-none">Мамутин Вадим</a> 
+                                        <h6 style="color: grey;">Барбер, стилист</h6>
+                                    </h6>
+                                    <div class="text-warning small mb-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                        <span class="text-muted ms-1">(4.9)</span>
+                                    </div>
+                                    <div class="mt-auto pt-2 d-flex justify-content-between align-items-center">
+                                        <button type="button"
+        class="btn btn-outline-dark btn-sm favorite-toggle mt-2"
+        data-master-id="vadim-mamutin"
+        data-master-name="Мамутин Вадим"
+        aria-pressed="false">
+    <i class="bi bi-heart"></i>
+    <span>В избранное</span>
+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Карточка 2 -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card h-100 product-card shadow-sm border-0 position-relative">
+                                <div class="product-img-wrapper p-3 text-center bg-light">
+                                    <img src="C:\Users\student\Desktop\123\images\ab3686e7-cc03-47b4-9111-667ff1e3f03a.jpg" class="card-img-top img-fluid rounded" alt="Смарт-часы" style="max-height: 400px; object-fit: contain;">
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h6 class="card-title fw-bold">
+                                        <a href="#" class="text-dark text-decoration-none">Вадимов Игнат</a>
+                                        <h6 style="color: grey;">Барбер, стилист</h6>
+                                    </h6>
+                                    <div class="text-warning small mb-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                        <span class="text-muted ms-1">(4.8)</span>
+                                    </div>
+                                    <div class="mt-auto pt-2 d-flex justify-content-between align-items-center">
+                                        <button type="button" class="btn btn-outline-dark btn-sm favorite-toggle mt-2"
+        data-master-id="ignat-vadimov" data-master-name="Вадимов Игнат"
+        aria-pressed="false">
+    <i class="bi bi-heart"></i>
+    <span>В избранное</span>
+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Карточка 3 -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card h-100 product-card shadow-sm border-0 position-relative">
+                                <div class="product-img-wrapper p-3 text-center bg-light">
+                                    <img src="C:\Users\student\Desktop\123\images\a1695873-324b-42ad-ba1a-f587c7492a51.jpg" class="card-img-top img-fluid rounded" alt="Портативная колонка" style="max-height: 400px; object-fit: contain;">
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h6 class="card-title fw-bold">
+                                        <a href="#" class="text-dark text-decoration-none">Зейнутдинова Лейла</a>
+                                        <h6 style="color: grey;">Барбер, стилист</h6>
+                                    </h6>
+                                    <div class="text-warning small mb-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <span class="text-muted ms-1">(5.0)</span>
+                                    </div>
+                                    <div class="mt-auto pt-2 d-flex justify-content-between align-items-center">
+                                        <button type="button" class="btn btn-outline-dark btn-sm favorite-toggle mt-2"
+        data-master-id="leila-zeynutdinova" data-master-name="Зейнутдинова Лейла"
+        aria-pressed="false">
+    <i class="bi bi-heart"></i>
+    <span>В избранное</span>
+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Карточка 4 -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card h-100 product-card shadow-sm border-0 position-relative">
+                                <div class="product-img-wrapper p-3 text-center bg-light">
+                                    <img src="C:\Users\student\Desktop\123\images\5a732adb-5f90-4b78-8287-a019454aacfb.jpg" class="card-img-top img-fluid rounded" alt="Внешний аккумулятор" style="max-height: 400px; object-fit: contain;">
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h6 class="card-title fw-bold">
+                                        <a href="#" class="text-dark text-decoration-none">Кириллов Артём</a>
+                                        <h6 style="color: grey;">Барбер, стилист</h6>
+                                    </h6>
+                                    <div class="text-warning small mb-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                        <span class="text-muted ms-1">(4.9)</span>
+                                    </div>
+                                    <div class="mt-auto pt-2 d-flex justify-content-between align-items-center">
+                                        <button type="button" class="btn btn-outline-dark btn-sm favorite-toggle mt-2"
+        data-master-id="artem-kirillov" data-master-name="Кириллов Артём"
+        aria-pressed="false">
+    <i class="bi bi-heart"></i>
+    <span>В избранное</span>
+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                
+
+                <!-- Модальное окно акции -->
+<div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="promoModalTitle">Акция</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body" id="promoModalText">
+                <!-- Текст подставит скрипт -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Понятно</button>
+                <a href="contact.html" class="btn btn-outline-dark">Записаться</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</main>
+
+        <!-- ПОДВАЛ (FOOTER) -->
+                <footer class="footer bg-dark text-white pt-5 pb-4 mt-auto">
+            <div class="container">
+                <div class="row g-4 mb-4">
+                    
+                    <!-- Колонка 1: О магазине -->
+                    <div class="col-12 col-md-4">
+                        <a href="index.html" class="navbar-brand fw-bold fs-4 text-white d-inline-block mb-3">
+                            <i class="bi bi-bag-heart-fill text-light me-2"></i>BLACKROOM
+                        </a>
+                        <p class="text-secondary small">
+                            
+                        </p>
+                        <div class="d-flex gap-3 fs-5">
+                            <a href="#" class="text-secondary text-white-50"><i class="bi bi-telegram"></i></a>
+                            <a href="#" class="text-secondary text-white-50"><i class="bi bi-vk"></i></a>
+                            <a href="#" class="text-secondary text-white-50"><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Колонка 2: Магазин -->
+                    <div class="col-6 col-md-2">
+                        <h6 class="fw-bold mb-3 text-uppercase small text-light">Каталог</h6>
+                        <ul class="list-unstyled small">
+                            <li class="mb-2"><a href="catalog.html #muzh" class="text-secondary text-decoration-none">Мужские стрижки</a></li>
+                            <li class="mb-2"><a href="catalog.html #zhen" class="text-secondary text-decoration-none">Женсикие стрижки</a></li>
+                            <li class="mb-2"><a href="catalog.html #dets" class="text-secondary text-decoration-none">Детские стрижки</a></li>
+                            <li class="mb-2"><a href="catalog.html #cosm" class="text-secondary text-decoration-none">Косметика</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Колонка 3: Покупателям -->
+                    <div class="col-6 col-md-3">
+                        <h6 class="fw-bold mb-3 text-uppercase small text-light">Покупателям</h6>
+                        <ul class="list-unstyled small">
+                            <li class="mb-2"><a href="about.html" class="text-secondary text-decoration-none">О компании</a></li>
+                            <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Способы оплаты</a></li>
+                            <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Гарантия и возврат</a></li>
+                            <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Частые вопросы (FAQ)</a></li>
+                            <li class="mb-2"><a href="contact.html" class="text-secondary text-decoration-none">Контакты</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <hr class="border-secondary my-4">
+
+                <!-- Нижняя полоса --><div class="d-flex flex-column flex-sm-row justify-content-between align-items-center small text-secondary">
+                    <p class="mb-2 mb-sm-0">&copy; 2026 BLACKROOM. Все права защищены.</p>
+                    <div>
+                        <span class="me-3"><i class="bi bi-shield-check text-success me-1"></i> Безопасная оплата</span>
+                        <i class="bi bi-credit-card fs-6 align-middle"></i>
+                    </div>
+                </div>
+            </div>
+        </footer>
+<!-- ВЫЕЗЖАЮЩАЯ ПАНЕЛЬ КОРЗИНЫ (OFFCANVAS — УРОК 9) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title fw-bold" id="offcanvasCartLabel">Корзина</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+        <div id="cartItems">
+            <p class="text-muted">Корзина пока пуста.</p>
+        </div>
+
+        <div class="border-top pt-3 mt-auto">
+            <div class="d-flex justify-content-between mb-3">
+                <span class="fw-bold">Итого:</span>
+                <span class="fw-bold fs-5 text-dark" id="cartTotal">0 ₽</span>
+            </div>
+            <div class="d-grid gap-2">
+                <a href="chekout.html" class="btn btn-dark">Оформить заказ</a>
+                <button class="btn btn-outline-secondary" data-bs-dismiss="offcanvas">Продолжить покупки</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script><script src="assets/js/main.js"></script>
+</body>
+<!-- Модальное окно авторизации -->
+<!-- Окно входа -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="loginModalLabel">Вход в аккаунт</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Электронная почта</label>
+                        <input id="loginEmail" type="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Пароль</label>
+                        <input id="loginPassword" type="password" class="form-control" required>
+                    </div>
+                    <div id="loginMessage" class="small mb-3" aria-live="polite"></div>
+                    <button type="submit" class="btn btn-dark w-100">Войти</button>
+                </form>
+                <div class="text-center mt-3">
+                    <button type="button" class="btn btn-link btn-sm text-secondary"
+                            data-bs-target="#registerModal" data-bs-toggle="modal">
+                        Ещё нет аккаунта? Зарегистрироваться
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Окно регистрации -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="registerModalLabel">Регистрация</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="mb-3">
+                        <label for="registerEmail" class="form-label">Электронная почта</label>
+                        <input id="registerEmail" type="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerPassword" class="form-label">Пароль</label>
+                        <input id="registerPassword" type="password" class="form-control"
+                               minlength="6" required>
+                        <div class="form-text">Минимум 6 символов.</div>
+                    </div>
+                    <div id="registerMessage" class="small mb-3" aria-live="polite"></div>
+                    <button type="submit" class="btn btn-dark w-100">Создать аккаунт</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</html>
